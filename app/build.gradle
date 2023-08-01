@@ -7,6 +7,10 @@ android {
     namespace 'com.example.xaper_x'
     compileSdk 33
 
+    buildFeatures{
+        viewBinding true
+    }
+
     defaultConfig {
         applicationId "com.example.xaper_x"
         minSdk 24
