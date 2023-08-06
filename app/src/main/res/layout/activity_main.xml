@@ -17,11 +17,14 @@
         android:id="@+id/fragmentFL"/>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="55dp"
         android:id="@+id/bottomNav"
         app:menu="@menu/menu"
         android:background="@color/white"
-       app:itemActiveIndicatorStyle="@color/cool_pink"
+       app:itemIconTint="@color/black"
+
+        app:labelVisibilityMode="labeled"
+
         />
 
 
