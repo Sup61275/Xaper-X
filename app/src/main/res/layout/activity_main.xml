@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:backgroundTint="@color/cool_pink">
 
 <androidx.appcompat.widget.LinearLayoutCompat
     android:layout_width="match_parent"
@@ -21,7 +22,7 @@
         android:id="@+id/bottomNav"
         app:menu="@menu/menu"
         android:background="@color/white"
-       app:itemIconTint="@color/black"
+       app:itemIconTint="@color/cool_pink"
 
         app:labelVisibilityMode="labeled"
 

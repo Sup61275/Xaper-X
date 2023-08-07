@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        setTheme(R.style.coolPinkNav)
         setContentView(binding.root)
         window.navigationBarColor = getColor(android.R.color.white)
         setFragment(VideosFragment())
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.videoview -> setFragment(VideosFragment())
                 R.id.folderview -> setFragment(folderFragment())
+                R.id.profile -> setFragment(folderFragment())
             }
             return@setOnItemSelectedListener true
         }
