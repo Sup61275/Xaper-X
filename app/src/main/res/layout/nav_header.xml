@@ -5,9 +5,7 @@
     android:layout_height="160dp"
     android:background="@drawable/fancy_background"
     android:padding="20dp">
-    <ImageView
-
-
+    <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="85dp"
         android:layout_height="85dp"
         android:src="@drawable/profilepic"/>

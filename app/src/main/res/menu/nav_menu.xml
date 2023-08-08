@@ -2,18 +2,23 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/feedbackNav"
-        android:title="@string/feedback" />
+        android:title="@string/feedback"
+        android:icon="@drawable/baseline_feedback_24" />
 
-    <item android:id="@+id/thenesNav"
-        android:title="@string/themes" />
+    <item android:id="@+id/themesNav"
+        android:title="@string/themes"
+        android:icon="@drawable/baseline_color_lens_24"/>
 
     <item android:id="@+id/sortOrderNav"
-        android:title="@string/sort_order"/>
+        android:title="@string/sort_order"
+        android:icon="@drawable/baseline_auto_stories_24"/>
 
     <item android:id="@+id/aboutNav"
-        android:title="@string/about" />
+        android:title="@string/about"
+        android:icon="@drawable/baseline_info_24"/>
 
     <item android:id="@+id/exitNav"
-        android:title="@string/exit" />
+        android:title="@string/exit"
+        android:icon="@drawable/baseline_exit_to_app_24"/>
 
 </menu>

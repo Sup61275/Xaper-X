@@ -16,6 +16,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.ActionBar
 import com.example.xaper_x.databinding.ActivityMainBinding
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -42,6 +43,18 @@ class MainActivity : AppCompatActivity() {
                 R.id.profile -> setFragment(HomeFragment())
             }
             return@setOnItemSelectedListener true
+        }
+        binding.navView.setNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.feedbackNav -> Toast.makeText(  this,  "Feedback", Toast.LENGTH_SHORT).show()
+                R.id.themesNav -> Toast.makeText( this, "Themes", Toast.LENGTH_SHORT).show()
+                R.id.sortOrderNav-> Toast.makeText( this,  "Sort Order", Toast.LENGTH_SHORT).show()
+                R.id.aboutNav -> Toast.makeText( this,"About",Toast.LENGTH_SHORT).show()
+                R.id.exitNav -> exitProcess(1)
+            }
+            // Toggle ActionBar visibility
+
+            return@setNavigationItemSelectedListener true
         }
     }
 
