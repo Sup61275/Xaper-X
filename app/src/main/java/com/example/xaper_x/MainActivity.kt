@@ -14,11 +14,13 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.appcompat.app.ActionBar
 import com.example.xaper_x.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var actionBar: ActionBar
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         window.navigationBarColor = getColor(android.R.color.white)
+        actionBar = supportActionBar!!
         //For Nav Drawer
         toggle= ActionBarDrawerToggle(this,binding.root,R.string.open,R.string.close)
         binding.root.addDrawerListener(toggle)
