@@ -4,14 +4,14 @@
     <style name="coolPinkNav" parent="Theme.Material3.Light">
         <!-- Change ActionBar background color -->
         <item name="colorPrimary">@color/cool_pink</item>
-        <item name="colorPrimaryVariant">@color/cool_pink</item>
+        <item name="colorPrimaryVariant">#FAC1D5</item>
         <item name="colorOnPrimary">@color/white</item>
 
         <!-- Change ActionBar title color -->
         <item name="android:textColorPrimary">@color/white</item>
 
         <!-- Change NavigationView menu icon and text color -->
-        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:textColorSecondary">@color/black</item>
 
 
         <!-- Change NavigationView background color -->
