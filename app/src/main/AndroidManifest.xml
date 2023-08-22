@@ -21,6 +21,10 @@
         android:theme="@style/coolPinkNav"
         tools:targetApi="31">
         <activity
+            android:name=".PlayerActivity"
+            android:configChanges="uiMode|orientation|screenSize|screenLayout"
+            android:exported="false" />
+        <activity
             android:name=".FoldersActivity"
             android:exported="false" />
         <activity
