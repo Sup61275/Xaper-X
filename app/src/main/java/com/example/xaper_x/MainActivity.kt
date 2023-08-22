@@ -1,6 +1,5 @@
 package com.example.xaper_x
 
-import android.Manifest
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
@@ -14,6 +13,8 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.ActionBar
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.widget.ImageViewCompat
 import com.example.xaper_x.databinding.ActivityMainBinding
 import java.io.File
 import kotlin.system.exitProcess
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         var videoList: ArrayList<Video> = ArrayList()
+        var folderList:ArrayList<Folder> = ArrayList()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,9 +58,11 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         if (checkMultiplePermissions()) {
+            folderList=ArrayList()
             videoList = getAllVideos()
             setFragment(VideosFragment())
         }
+
 
         binding.bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
@@ -79,6 +83,10 @@ class MainActivity : AppCompatActivity() {
             }
             return@setNavigationItemSelectedListener true
         }
+
+
+
+
     }
 
     private fun setFragment(fragment: Fragment) {
@@ -115,6 +123,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getAllVideos(): ArrayList<Video> {
         val tempList = ArrayList<Video>()
+        val tempFolderList= ArrayList<String>()
         val projection = arrayOf(
             MediaStore.Video.Media.TITLE,
             MediaStore.Video.Media.SIZE,
@@ -122,7 +131,8 @@ class MainActivity : AppCompatActivity() {
             MediaStore.Video.Media.BUCKET_DISPLAY_NAME,
             MediaStore.Video.Media.DATA,
             MediaStore.Video.Media.DATE_ADDED,
-            MediaStore.Video.Media.DURATION
+            MediaStore.Video.Media.DURATION,
+            MediaStore.Video.Media.BUCKET_ID
         )
         val cursor = this.contentResolver.query(
             MediaStore.Video.Media.EXTERNAL_CONTENT_URI, projection, null, null,
@@ -133,6 +143,7 @@ class MainActivity : AppCompatActivity() {
                 val titleC = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Video.Media.TITLE))
                 val idC = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Video.Media._ID))
                 val folderC = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Video.Media.BUCKET_DISPLAY_NAME))
+                val folderIDc=cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Video.Media.BUCKET_ID))
                 val sizeC = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Video.Media.SIZE))
                 val pathC = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Video.Media.DATA))
                 val durationC = cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Video.Media.DURATION))
@@ -150,6 +161,10 @@ class MainActivity : AppCompatActivity() {
                         Size = sizeC
                     )
                     if (file.exists()) tempList.add(video)
+                    if(!tempFolderList.contains(folderC)){
+                        tempFolderList.add(folderC)
+                        folderList.add(Folder(id=folderIDc, folderName = folderC))
+                    }
                 } catch (e: Exception) {
                     // Handle exception
                 }

@@ -4,16 +4,16 @@
     <string name="all_folder">All Folder</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-   <string name="open">Open</string>
+    <string name="open">Open</string>
     <string name="close">Close</string>
 
-<string name="feedback">Feedback</string>
+    <string name="feedback">Feedback</string>
 
-<string name="themes">Themes</string>
+    <string name="themes">Themes</string>
 
-<string name="sort_order">Sort Order</string>
+    <string name="sort_order">Sort Order</string>
 
-<string name="about">About</string>
+    <string name="about">About</string>
     <string name="exit">Exit</string>
     <string name="video_name">Video Name</string>
     <string name="folder_name">Folder Name</string>

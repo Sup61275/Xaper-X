@@ -11,3 +11,4 @@ data class Video(
     val artUri: Uri,
     val Size: String
 )
+data class Folder(val id: String,val folderName: String)

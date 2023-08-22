@@ -4,7 +4,7 @@
     <style name="coolPinkNav" parent="Theme.Material3.Light">
         <!-- Change ActionBar background color -->
         <item name="colorPrimary">@color/cool_pink</item>
-        <item name="colorPrimaryVariant">#FAC1D5</item>
+        <item name="colorPrimaryVariant">#EA7DB0</item>
         <item name="colorOnPrimary">@color/white</item>
 
         <!-- Change ActionBar title color -->
