@@ -38,6 +38,8 @@ class PlayerActivity : AppCompatActivity() {
     }
 
     private fun createPlayer(){
+        binding.VideoTitle.text= playerList[position].title
+        binding.VideoTitle.isSelected=true
         player = SimpleExoPlayer.Builder(this).build()
         binding.playerView.player = player
         val mediaItem = MediaItem.fromUri(playerList[position].artUri)
